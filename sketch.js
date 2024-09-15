@@ -5,7 +5,12 @@ function setup() {
 }
 
 function draw() {
+  // if the L key is pressed the background colors will change
+  if (showText) {
+    background(random(255), random(255), random(255))
+  } else {
   background("hotpink");
+  }
 
   // change color based on vertical mouse pos.
 
