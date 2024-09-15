@@ -28,8 +28,8 @@ function draw() {
     fill(255);
     textSize(73);
     textAlign(CENTER, CENTER);
-    text("✨XOXOXOXO✨", width / 2, height / 2) ; // xoxo will be at center 
-    
+    text("✨XOXO✨", width / 2, height / 2) ; // xoxo will be at center 
+
   }
 }
 
@@ -41,4 +41,18 @@ function draw() {
   bezierVertex(x - 25 * scaleFactor, y - 25 * scaleFactor, x - 50 * scaleFactor, y + 10 * scaleFactor, x, y + 50 * scaleFactor);
   bezierVertex(x + 50 * scaleFactor, y + 10 * scaleFactor, x + 25 * scaleFactor, y - 25 * scaleFactor, x, y);
   endShape(CLOSE);
+  }
+
+  // detect the L key being pressed 
+  function keyPressed() {
+    if (key === 'L' || key ==='l') {
+      showText = true;
+    }
+  }
+
+  // hide xoxo when key is released 
+  function keyReleased() {
+    if (key === 'L' || key === 'l') {
+      showText = false;
+    }
   }
