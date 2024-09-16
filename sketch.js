@@ -1,7 +1,7 @@
 let showText = false;
 
 function setup() {
-  createCanvas(400, 400);
+  createCanvas(500, 500);
 }
 
 function draw() {
@@ -33,7 +33,7 @@ function draw() {
     fill(255);
     textSize(73);
     textAlign(CENTER, CENTER);
-    text("✨XOXO✨", width / 2, height / 2) ; // xoxo will be at center 
+    text("✨LOVE✨", width / 2, height / 2) ; // Love will be at center 
 
   }
 }
