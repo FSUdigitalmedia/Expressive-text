@@ -5,15 +5,14 @@ function setup() {
 }
 
 function draw() {
-  // if the L key is pressed the background colors will change
+  // Change the background color based on whether the L key is pressed
   if (showText) {
-    background(random(255), random(255), random(255))
+    background(random(255), random(255), random(255));
   } else {
-  background("hotpink");
+    background("hotpink");
   }
 
-  // change color based on vertical mouse pos.
-
+  // Change color of the circle based on vertical mouse position
   let startingColor = color("red");
   let endingColor = color("pink");
   let pct = map(mouseY, 0, height, 0, 1, true);
@@ -21,43 +20,42 @@ function draw() {
   fill(clr);
   noStroke();
 
-  // draw circle, with the size based on horizontal mouse pos.
+  // Draw a circle, with size based on horizontal mouse position
   let d = map(mouseX, 0, width, 50, 300, true);
 
-  // set shape to heart
-  heart(width/2, height/ 2 - 50, d);
+  // Draw the heart shape
+  heart(width / 2, height / 2 - 50, d);
   console.log(d);
 
-  // show "XOXO" if the L key is pressed
+  // Show "✨LOVE✨" if the L key is pressed
   if (showText) {
     fill(255);
     textSize(73);
     textAlign(CENTER, CENTER);
-    text("✨LOVE✨", width / 2, height / 2) ; // Love will be at center 
-
+    text("✨LOVE✨", width / 2, height / 2);
   }
 }
 
-  // draw heart shape
-  function heart(x, y, size) {
+// Function to draw a heart shape
+function heart(x, y, size) {
   beginShape();
-  let scaleFactor = size / 50; 
-  vertex(x,y);
+  let scaleFactor = size / 50;
+  vertex(x, y);
   bezierVertex(x - 25 * scaleFactor, y - 25 * scaleFactor, x - 50 * scaleFactor, y + 10 * scaleFactor, x, y + 50 * scaleFactor);
   bezierVertex(x + 50 * scaleFactor, y + 10 * scaleFactor, x + 25 * scaleFactor, y - 25 * scaleFactor, x, y);
   endShape(CLOSE);
-  }
+}
 
-  // detect the L key being pressed 
-  function keyPressed() {
-    if (key === 'L' || key ==='l') {
-      showText = true;
-    }
+// Detect the L key being pressed
+function keyPressed() {
+  if (key === 'L' || key === 'l') {
+    showText = true;
   }
+}
 
-  // hide xoxo when key is released 
-  function keyReleased() {
-    if (key === 'L' || key === 'l') {
-      showText = false;
-    }
+// Hide the text when the key is released
+function keyReleased() {
+  if (key === 'L' || key === 'l') {
+    showText = false;
   }
+}
